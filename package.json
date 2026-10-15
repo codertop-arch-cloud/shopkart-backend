@@ -1,0 +1,42 @@
+{
+  "name": "shopkart-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test/wishlist.test.js && node test/cart.test.js && node test/orders.test.js",
+    "test:wishlist": "node test/wishlist.test.js",
+    "test:cart": "node test/cart.test.js",
+    "test:orders": "node test/orders.test.js",
+    "test:all": "node test/wishlist.test.js && node test/cart.test.js && node test/orders.test.js",
+    "start": "node --env-file=.env index.js",
+    "dev:backend": "node --env-file=.env index.js",
+    "frontend": "npm --prefix frontend run dev",
+    "build:frontend": "npm --prefix frontend run build",
+    "dev": "concurrently -n \"BACKEND,FRONTEND\" -c \"blue,green\" \"node --env-file=.env index.js\" \"npm --prefix frontend run dev\"",
+    "seed": "node --env-file=.env seed.js",
+    "backend": "node --env-file=.env index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "axios": "^1.20.0",
+    "bcrypt": "^6.0.0",
+    "cloudinary": "^2.11.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^9.9.4",
+    "multer": "^2.4.0",
+    "razorpay": "^2.9.8"
+  },
+  "allowScripts": {
+    "bcrypt@6.0.0": true
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.5"
+  }
+}
